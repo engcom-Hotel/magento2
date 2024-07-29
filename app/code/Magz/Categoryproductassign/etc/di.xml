@@ -1,0 +1,215 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\AsyncConfig\Api\Data\AsyncConfigMessageInterface"
+                type="Magz\Categoryproductassign\Model\AsyncConfigMessage" />
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="catassign" xsi:type="object">Magz\Categoryproductassign\Console\Command\Catassign</item>
+			</argument>
+		</arguments>
+	</type>
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaLocator" xsi:type="object">Magento\Framework\MessageQueue\Consumer\Config\SchemaLocator</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="perFileSchema" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\MessageQueue\Consumer\Config\Reader\XmlReader">
+        <arguments>
+            <argument name="schemaFile" xsi:type="string">urn:magento:framework:MessageQueue/etc/consumer.xsd</argument>
+        </arguments>
+    </type>
+</config>

@@ -5,6 +5,7 @@ use Magento\AsyncConfig\Api\Data\AsyncConfigMessageInterface;
 use Magento\Catalog\Model\CategoryLinkManagement;
 use Magento\Catalog\Model\CategoryLinkRepository;
 use Magento\Framework\MessageQueue\PublisherInterface;
+use Magento\Framework\Serialize\Serializer\Json;
 
 class Publisher
 {
@@ -29,17 +30,24 @@ class Publisher
     private $messageObject;
 
     /**
+     * @var Json
+     */
+    private $json;
+
+    /**
      * @param PublisherInterface $publisher
      */
     public function __construct(PublisherInterface $publisher,
                                 CategoryLinkManagement $categoryLinkManagement,
                                 CategoryLinkRepository $categoryLinkRepository,
-                                AsyncConfigMessage $messageObject)
+                                AsyncConfigMessage $messageObject,
+                                Json $json)
     {
         $this->publisher = $publisher;
         $this->categoryLinkManagement = $categoryLinkManagement;
         $this->categoryLinkRepository = $categoryLinkRepository;
         $this->messageObject = $messageObject;
+        $this->json = $json;
     }
 
     /**
@@ -52,13 +60,19 @@ class Publisher
     {
         if($message['action'] == 'add') {
             $products = $this->getAssignedProducts($message['category_id']);
+            $categoryId = 34;
             if(count($products) > 0) {
                 foreach($products as $product) {
-                    $this->messageObject->setConfigData($product->getSku());
-                    $this->messageObject->setData($message['category_id'], $product->getSku(), 'add');
+                    $message_q = [
+                        "category_id" => $categoryId,
+                        "action" => "add",
+                        "product_sku" => $product->getSku()
+                    ];
+                    $this->messageObject->setConfigData($this->json->serialize($message_q));
+                    $this->messageObject->setData($categoryId, $product->getSku(), 'add');
                     $this->publisher->publish('categoryproductassign.topic', $this->messageObject);
                     //print the message on terminal
-                    echo "Message published for: " . $product->getSku() . PHP_EOL;
+                    echo "Message published for: " . $product->getSku() ." in ".$categoryId . PHP_EOL;
                     #$this->categoryLinkManagement->assignProductToCategories($product->getSku(), [3]);
                 }
             } else {

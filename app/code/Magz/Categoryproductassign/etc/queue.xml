@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:MessageQueue/etc/queue.xsd">
+<!--config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:MessageQueue/etc/queue.xsd">
     <broker topic="categoryproductassign.topic" exchange="magento">
-        <queue name="categoryproductassign.queue" consumer="saveConfigProcessor" handler="Magz\Categoryproductassign\Model\Consumer::process"/>
+        <queue name="categoryproductassign.queue" consumer="categoryproductassign.consumer" handler="Magz\Categoryproductassign\Model\Consumer::process" />
+    </broker>
+</config-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+    <broker topic="categoryproductassign.topic" exchange="categoryproductassign.topic">
+        <queue name="categoryproductassign.queue" consumer="categoryproductassign.consumer" />
     </broker>
 </config>

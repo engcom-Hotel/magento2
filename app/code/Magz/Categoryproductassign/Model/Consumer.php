@@ -4,6 +4,7 @@ namespace Magz\Categoryproductassign\Model;
 
 use Magento\Catalog\Model\CategoryLinkManagement;
 use Magento\AsyncConfig\Api\Data\AsyncConfigMessageInterface;
+use Magento\Framework\Serialize\Serializer\Json;
 
 class Consumer
 {
@@ -13,10 +14,16 @@ class Consumer
     private  $categoryLinkManagement;
 
     /**
+     * @var Json
+     */
+    private $json;
+
+    /**
      * @param CategoryLinkManagement $categoryLinkManagement
      */
-    public function __construct(CategoryLinkManagement $categoryLinkManagement) {
+    public function __construct(CategoryLinkManagement $categoryLinkManagement, Json $json) {
         $this->categoryLinkManagement = $categoryLinkManagement;
+        $this->json = $json;
     }
 
     /**
@@ -29,9 +36,11 @@ class Consumer
     {
         echo "Current time: " . date('Y-m-d H:i:s') . PHP_EOL;
         // Extract data from the message
-        $categoryId = $message->getCategoryId();
-        $productSku = $message->getProductSku();
-        $action = $message->getAction();
+        $configData = $message->getConfigData();
+        $data = $this->json->unserialize($configData);
+        $categoryId = $data['category_id'];
+        $productSku = $data['product_sku'];
+        $action = $data['action'];
 
         echo "Current time: " . date('Y-m-d H:i:s') . PHP_EOL;
         echo "Picked SKU: ".$productSku." for category ID: ".$categoryId." with action: ".$action.PHP_EOL;
